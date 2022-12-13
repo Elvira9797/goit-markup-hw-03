@@ -297,6 +297,7 @@ img {
 
 .footer-text {
   color: var(--accent-cornflover);
+  width: 264px;
 }
 
 /* Portfolio */
@@ -329,6 +330,7 @@ img {
 
 .portfolio-card .card-discription {
   padding-left: 16px;
+  padding-right: 16px;
 }
 
 .portfolio-link {
