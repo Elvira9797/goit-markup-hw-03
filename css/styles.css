@@ -18,6 +18,34 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* Utilities */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .list {
   list-style: none;
 }
@@ -35,10 +63,35 @@ body {
   margin: -1px;
 }
 
+.section.no-padding {
+  padding-top: 0;
+}
+
+.card-discription {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -24px;
+  margin-top: -24px;
+}
+
+.card-item {
+  flex-basis: calc(100% / 4 - 24px);
+  margin-left: 24px;
+  margin-top: 24px;
+}
+
 /* Button */
 
 .button {
   color: var(--primary-text-color);
+  border: 0;
+  border-radius: 4px;
+
   cursor: pointer;
   font-family: inherit;
   font-size: 16px;
@@ -48,27 +101,44 @@ body {
 }
 
 .button.primary {
+  padding: 16px 32px;
+
   color: var(--color-white);
   background-color: var(--primary-brand);
-  line-height: 1.19;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  line-height: 1.18;
 }
 
 .button.secondary {
+  padding: 12px 24px;
+  border: 1px solid var(--accent-cornflover);
+
   color: var(--primary-brand);
   background-color: var(--light-cloud);
 }
 
 .button.secondary:hover,
 .button.secondary:focus {
+  border: 1px solid transparent;
+
   color: var(--color-white);
   background-color: var(--primary-brand);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Header */
 
-.logo {
-  color: var(--navy-blue);
+.header-page {
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
 
+.logo {
+  margin-right: 77px;
+
+  color: var(--navy-blue);
   font-family: "Raleway", sans-serif;
   font-size: 18px;
   font-weight: 800;
@@ -84,9 +154,26 @@ body {
 
 /* Site nav */
 
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav {
+  display: flex;
+}
+
+.list-item:not(:last-child) {
+  margin-right: 40px;
+}
+
 .site-nav .link {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
   color: var(--navy-blue);
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -97,6 +184,11 @@ body {
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--primary-brand);
+}
+
+.contacts {
+  display: flex;
+  margin-left: auto;
 }
 
 .contacts .link {
@@ -111,23 +203,37 @@ body {
 
 /* Main */
 
+/* Hero */
+
+.hero {
+  text-align: center;
+  padding: 192px 474px;
+}
+
 .hero.background {
   background-color: var(--navy-blue);
 }
 
 .hero-title {
+  margin-bottom: 48px;
+
   color: var(--color-white);
   font-weight: 700;
   font-size: 56px;
   line-height: 1.07;
-  text-align: center;
 }
 
 /* Section */
 
-.section-title {
-  color: var(--navy-blue);
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
 
+.section-title {
+  margin-bottom: 72px;
+
+  color: var(--navy-blue);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
@@ -136,11 +242,18 @@ body {
 }
 
 .list-title {
-  color: var(--navy-blue);
+  margin-bottom: 8px;
 
+  color: var(--navy-blue);
   font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
+}
+
+/* What are we doing */
+
+.work-item {
+  flex-basis: calc(100% / 3 - 24px);
 }
 
 /* Our team */
@@ -150,16 +263,32 @@ body {
 }
 
 .team-item {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
   background-color: var(--color-white);
 }
 
+.team-list .card-discription {
+  text-align: center;
+}
+
 /* Footer */
+
+.footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
 
 .footer.background {
   background-color: var(--navy-blue);
 }
 
 .footer .logo {
+  display: inline-block;
+  margin-bottom: 16px;
+  margin-right: 0;
+
   color: var(--light-cloud);
   line-height: 1.17;
   text-decoration: none;
@@ -170,6 +299,36 @@ body {
 }
 
 /* Portfolio */
+
+.portfolio-section {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+/* Filters */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 72px;
+}
+
+.filters-item:not(:last-child) {
+  margin-right: 24px;
+}
+
+/* Portfolio cards */
+
+.portfolio-card {
+  flex-basis: calc(100% / 3 - 24px);
+
+  border-left: 0.5px solid #f4f4fd;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-card .card-discription {
+  padding-left: 16px;
+}
 
 .portfolio-link {
   color: var(--primary-text-color);
